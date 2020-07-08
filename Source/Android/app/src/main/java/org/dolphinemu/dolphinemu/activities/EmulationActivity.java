@@ -287,6 +287,9 @@ public final class EmulationActivity extends AppCompatActivity
     mSettings = new Settings();
     mSettings.loadSettings(null);
 
+    final SharedPreferences.Editor editor = mPreferences.edit();
+    editor.putInt("emulationActivityOrientation", ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+    editor.apply();
     updateOrientation();
 
     // TODO: The accurate way to find out which console we're emulating is to first
